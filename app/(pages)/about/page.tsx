@@ -13,7 +13,7 @@ import { COMPANYNAME } from "@/app/components/js/config";
 
 export const metadata: Metadata = {
   title: `About ${COMPANYNAME}`,
-  description: `ABC Virtual Bank stands at the forefront of financial innovation, offering a robust platform that unlocks the potential of cryptocurrency for users around the globe. We are dedicated to transforming the financial landscape by making digital currency accessible, secure, and efficient to use. Our initiatives are driven by the commitment to empower economic independence and advance global access to digital finance, providing comprehensive tools and resources that enable both beginners and experienced investors to thrive in the expanding world of crypto.`,
+  description: `ABC Virtual Bank stands at the forefront of financial innovation, offering a robust platform that unlocks the potential of cryptocurrency for users around the globe. We are dedicated to transforming the financial landscape by making digital currency accessible, secure, and efficient to use. Our initiatives are driven by the commitment to empower economic independence and advance global access to digital finance, providing comprehensive tools and resources that enable both beginners and experienced investors to thrive in the expanding world of crypto.`
 };
 
 export default function FSSC() {

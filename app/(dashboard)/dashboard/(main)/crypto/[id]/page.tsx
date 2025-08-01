@@ -17,7 +17,8 @@ const fetchData = async (token: string, id: string) => {
   return { users: data?.data || [], crypto: dt };
 };
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const token = await handleProtected(true);
   const { users, crypto } = await fetchData(token, params.id);
   return <UpdateCrypto foundCrypto={crypto} users={users} />;

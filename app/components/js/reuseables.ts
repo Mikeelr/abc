@@ -4,7 +4,7 @@ import { putRequest } from "./api_client";
 import { tokenUrl, usersUrl } from "./config";
 
 const handleProtected = async (admin: boolean = false, vrcToken?: string) => {
-  const nextCookies = cookies();
+  const nextCookies = await cookies();
 
   const token = nextCookies.get("token")?.value;
 
@@ -30,7 +30,7 @@ export const handleVerify = async (vrcToken?: string) => {
   return { success, data };
 };
 export const handleAuthorization = async () => {
-  const nextCookies = cookies();
+  const nextCookies = await cookies();
 
   const token = nextCookies.get("token")?.value;
 

@@ -10,11 +10,12 @@ const fetchData = async (token?: string, number?: string) => {
   return data;
 };
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams: { number: string; token: string };
-}) {
+export default async function Page(
+  props: {
+    searchParams: Promise<{ number: string; token: string }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   const currency = await fetchData(searchParams.token, searchParams.number);
   return <Body coin={currency} />;
 }

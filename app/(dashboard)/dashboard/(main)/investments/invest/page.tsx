@@ -17,11 +17,12 @@ const fetchData = async (token: string, id: string) => {
   return { plan, wallet };
 };
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams: { id: string };
-}) {
+export default async function Page(
+  props: {
+    searchParams: Promise<{ id: string }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   const token = await handleProtected(false);
   const { plan, wallet } = await fetchData(token, searchParams.id);
   return <Invest plan={plan} wallet={wallet} />;

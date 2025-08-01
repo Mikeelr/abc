@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: COMPANYNAME,
   description: "Buy, trade, store and send Ruba and other Cryptocurrencies",
-  icons: [{ rel: "icon", url: "/icon.png" }],
+  icons: [{ rel: "icon", url: "/icon.png" }]
 };
 
 export default function RootLayout({

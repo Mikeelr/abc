@@ -27,12 +27,13 @@ const getData = async (token: string) => {
   };
 };
 
-export default async function Page({
-  searchParams,
-}: {
-  params: {};
-  searchParams: { vrcToken: string };
-}) {
+export default async function Page(
+  props: {
+    params: Promise<{}>;
+    searchParams: Promise<{ vrcToken: string }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   const token = await handleProtected(false, searchParams.vrcToken);
   const { wallets, ruba, transactions, pages } = await getData(token);
   return (

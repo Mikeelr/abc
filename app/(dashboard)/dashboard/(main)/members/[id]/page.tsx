@@ -12,7 +12,8 @@ const fetchData = async (token: string, id: string) => {
   if (!uzer || !data) redirect("/dashboard/members");
   return { uzer, wallets: data };
 };
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const token = await handleProtected(true);
   const { uzer, wallets } = await fetchData(token, params.id);
   return <UpdateMember foundUser={uzer} wallets={wallets} />;
