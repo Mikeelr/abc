@@ -1,0 +1,38 @@
+.popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  background-color: var(--p);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+
+  padding: 5% 20%;
+  z-index: 9999999999999;
+  font-size: 0.9rem;
+  color: var(--white);
+  font-size: 0.9rem;
+  div {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    button {
+      flex: 1;
+      height: 50px;
+      background-color: var(--white);
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--p);
+    }
+    :last-child {
+      background-color: var(--s);
+      color: var(--white);
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+}

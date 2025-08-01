@@ -1,0 +1,74 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  > * {
+    z-index: 3;
+  }
+  .body {
+    width: 100%;
+
+    padding: 5% 30%;
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      input,
+      textarea,
+      select {
+        width: 100%;
+        height: 50px;
+        outline: none;
+        font-family: inherit;
+        border: 1px solid var(--black);
+        padding-left: 6px;
+        background-color: transparent;
+        border-radius: 3px;
+        &:focus {
+          border: 2px solid var(--black);
+        }
+      }
+      textarea {
+        height: 150px;
+      }
+      .qty {
+        display: flex;
+        align-items: stretch;
+        font-size: 2rem;
+
+        span {
+          border: 1px solid var(--bg);
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 80px;
+          cursor: pointer;
+        }
+        input {
+          font-size: 2rem;
+          text-align: center;
+        }
+      }
+      button {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--p);
+        color: var(--white);
+        outline: none;
+        height: 50px;
+        border: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main {
+    .body {
+      padding: 10%;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+@import "../../../utilities.module";
+@include keyframes(slider) {
+  0%,
+  100% {
+    right: 0;
+  }
+  50% {
+    right: var(--length);
+  }
+}
+
+.curve {
+  display: flex;
+  width: 100vw;
+  height: 20vh;
+
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: colorWithOpacity($w, 0.4);
+  position: relative;
+  div {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+  }
+  .right {
+    height: 60%;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    .box {
+      position: absolute;
+      height: 100%;
+      gap: 20px;
+      flex-wrap: nowrap;
+      width: max-content;
+      @include animate(slider, var(--time), linear, 0s, infinite);
+
+      &:hover {
+        -webkit-animation-play-state: paused;
+        animation-play-state: paused;
+      }
+      div {
+        flex-direction: column;
+        gap: 10px;
+        flex: 1;
+        width: 100px;
+        .down {
+          color: $d;
+        }
+        .up {
+          color: $b;
+        }
+        span {
+          color: $t;
+          font-size: 0.8rem;
+        }
+      }
+    }
+    .notices {
+      width: 100%;
+      height: 100%;
+      justify-content: space-between;
+      .notice {
+        flex-direction: column;
+        height: 100%;
+        padding: 0 2.5%;
+        background-color: colorWithOpacity($pd, 0.9);
+        z-index: 8;
+        color: $w;
+        font-size: 0.8rem;
+
+        > :first-child {
+          font-size: 1rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .left {
+    width: 100%;
+    height: 40%;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $p;
+    div {
+      gap: 10px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .curve {
+    overflow-x: hidden;
+    height: 110px;
+    .right {
+      height: 60%;
+
+      .box {
+        position: relative;
+
+        div {
+          width: 100px;
+        }
+      }
+      .notices {
+        width: 100%;
+        justify-content: space-between;
+        position: absolute;
+        .notice {
+          padding: 2.5%;
+          font-size: 0.8rem;
+        }
+      }
+    }
+    .left {
+      height: 40%;
+
+      padding: 0 5%;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-align: center;
+      div {
+        gap: 10px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

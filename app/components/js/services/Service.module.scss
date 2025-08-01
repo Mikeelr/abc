@@ -1,0 +1,127 @@
+@import "../../../utilities.module";
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 0.9rem;
+  color: $w;
+  div {
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+  }
+  .top {
+    position: relative;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    width: 100%;
+    height: calc(100vh - 90px);
+    .image {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      img {
+        object-fit: cover;
+        transform: scaleX(-1);
+      }
+    }
+    .text {
+      z-index: 2;
+      padding: 10%;
+      height: 100%;
+      width: 50%;
+
+      background: linear-gradient(
+        to right,
+        transparent,
+        colorWithOpacity($b, 0.8) 7%
+      );
+      flex-direction: column;
+      gap: 10px;
+      h2 {
+        color: $gb;
+      }
+    }
+  }
+  .services {
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: stretch;
+    font-size: 0.9rem;
+    width: 100%;
+    padding: 5% 10%;
+    background: $w;
+    .service {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 24px;
+      width: 30%;
+      background-color: $w;
+      box-shadow: 0 8px 16px colorWithOpacity($s, 0.2);
+      transition: 0.75s;
+      color: $b;
+      gap: 30px;
+      &:hover {
+        background-color: $s;
+        color: $w;
+        .icon {
+          color: $w;
+        }
+        .text {
+          h3 {
+            color: $w;
+          }
+        }
+      }
+      .icon {
+        font-size: 4rem;
+        color: $s;
+        transition: 0.75s;
+      }
+      .text {
+        flex-direction: column;
+        gap: 10px;
+        h3 {
+          color: $p;
+          transition: 0.75s;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main {
+    .top {
+      flex-direction: column;
+      height: unset;
+      .image {
+        position: relative;
+        width: 100%;
+        height: 40vh;
+      }
+      .text {
+        height: unset;
+        width: 100%;
+        padding: 10vh 10%;
+
+        background: $pd;
+      }
+    }
+    .services {
+      padding: 10vh 10%;
+
+      .service {
+        width: 100%;
+      }
+    }
+  }
+}

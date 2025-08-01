@@ -1,0 +1,54 @@
+.blog {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 50px;
+  .box {
+    width: 50%;
+  }
+  .row,
+  .column {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    > * {
+      flex: 1;
+    }
+  }
+  .column {
+    flex-direction: column;
+  }
+  .table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    overflow-x: auto;
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: max-content;
+      gap: 10px;
+      > * {
+        width: 150px;
+      }
+      > :first-child {
+        width: 250px;
+      }
+      div {
+        display: flex;
+        gap: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .blog {
+    .box {
+      width: 100%;
+    }
+  }
+}

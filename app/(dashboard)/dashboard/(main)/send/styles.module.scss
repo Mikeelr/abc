@@ -1,0 +1,60 @@
+.send {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  padding: 0 25%;
+  gap: 50px;
+  align-items: flex-start;
+  .center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .buttons {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    span {
+      border: 2px solid var(--p);
+      color: var(--p);
+      height: 50px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.75s;
+      cursor: pointer;
+    }
+    .active {
+      background-color: var(--p);
+      color: var(--white);
+    }
+  }
+  .atn {
+    color: var(--s);
+  }
+  a {
+    color: var(--p);
+  }
+  form {
+    .column {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .send {
+    padding: 0;
+    form {
+      p {
+        width: 100%;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+}

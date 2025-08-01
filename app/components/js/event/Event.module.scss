@@ -1,0 +1,90 @@
+@import "../../../styles/_animate.module.scss";
+@include keyframes(slider) {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(-1 * var(--move));
+  }
+}
+
+.events {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  width: 100%;
+  flex-direction: column;
+  background-color: var(--pd);
+  color: var(--white);
+  position: relative;
+  z-index: 3000;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  > p {
+    margin: 0;
+    position: absolute;
+    top: -35px;
+    background-color: var(--p);
+    padding: 12px 24px;
+  }
+  .container {
+    position: relative;
+    height: calc(100% - 30px);
+    width: 100%;
+    overflow: hidden;
+    .roller {
+      display: flex;
+      position: absolute;
+      left: 0;
+      height: 100%;
+      width: max-content;
+      gap: 100px;
+      @include animate(slider, var(--duration), linear, infinite);
+      &:hover {
+        animation-play-state: paused;
+      }
+      .event {
+        display: flex;
+        height: 90%;
+        gap: 20px;
+        padding: 12px;
+        border: 2px solid var(--s);
+        border-radius: 3px;
+        font-size: 0.9rem;
+        .date {
+          color: var(--s);
+          span {
+            height: 100%;
+            padding: 6px;
+            border: 2px solid var(--s);
+            border-right: none;
+          }
+          :last-child {
+            border-right: 2px solid var(--s);
+          }
+        }
+        .icon {
+          color: var(--s);
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .events {
+    h1 {
+      font-size: 1.3rem;
+    }
+    .container {
+      .roller {
+        @include animate(slider, calc(var(--duration) * 2), linear, infinite);
+      }
+    }
+  }
+}

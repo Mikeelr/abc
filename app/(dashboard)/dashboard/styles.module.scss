@@ -1,0 +1,192 @@
+@import "../../_utilities.module";
+
+.main {
+  display: block;
+
+  .index {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    gap: 50px;
+
+    > div {
+      flex: 1;
+      height: 66vh;
+      overflow: auto;
+      position: relative;
+    }
+  }
+  .container {
+    height: 100%;
+    width: 100%;
+    padding: 5%;
+    display: block;
+  }
+  .list {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    min-height: 70vh;
+    justify-content: space-between !important;
+    width: 100%;
+    overflow: hidden;
+  }
+  .table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 30px;
+    align-self: flex-start;
+    .row {
+      gap: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: max-content;
+      align-self: flex-start;
+      > * {
+        width: 220px;
+      }
+      div {
+        justify-content: space-between;
+        gap: 10px;
+        > * {
+          flex: 1;
+        }
+      }
+    }
+  }
+  .column {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    text-align: center;
+    > * {
+      width: 100%;
+    }
+  }
+  .transaction {
+    min-width: 100%;
+    width: 85vw;
+    padding: 12px;
+    border-radius: 12px;
+
+    border-radius: 6px;
+    justify-content: space-between;
+    align-self: flex-start;
+    gap: 10px;
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    > * {
+      flex: 1;
+    }
+    > :first-child {
+      flex: 0.5;
+      font-size: 3rem;
+      align-items: center;
+    }
+    > :nth-child(2) {
+      flex: 3;
+    }
+
+    div {
+      flex-direction: column;
+      align-items: flex-start;
+      p {
+        font-weight: 600;
+        width: 100%;
+        overflow-wrap: break-word;
+      }
+      .amount {
+        font-size: 1.5rem;
+      }
+    }
+    .actions {
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+      > * {
+        // flex: 1;
+        width: 100%;
+        padding: 6px;
+      }
+      button {
+        font-size: 0.9rem;
+
+        &:disabled {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+  .investments {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    .plan,
+    .investment {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+
+      border-radius: 6px;
+      overflow: hidden;
+      h1 {
+        color: var(--s);
+      }
+      div {
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .banner {
+        height: 200px;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+      }
+      .under {
+        flex-direction: column;
+        padding: 5%;
+        width: 100%;
+
+        div {
+          width: 100%;
+
+          :last-child {
+            text-align: right;
+          }
+        }
+        .action {
+          width: 100%;
+        }
+      }
+    }
+    .investment {
+      padding: 5%;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main {
+    .index {
+      flex-direction: column;
+      gap: 40px;
+      > div {
+        flex: unset;
+        width: 100%;
+        height: unset;
+      }
+    }
+  }
+}

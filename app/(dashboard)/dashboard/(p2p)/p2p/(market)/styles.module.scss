@@ -1,0 +1,98 @@
+@import "../../../../../_utilities.module";
+.markets {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 50px;
+  width: 100%;
+  .container {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+    justify-content: space-between;
+    > * {
+      flex: 1;
+    }
+  }
+  .table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    overflow-x: auto;
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: max-content;
+      gap: 10px;
+      > * {
+        width: 150px;
+      }
+      div {
+        display: flex;
+        gap: 10px;
+      }
+    }
+  }
+  .grid {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .market {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    border-radius: 12px;
+    align-items: flex-start;
+    background: linear-gradient(
+      to right,
+      colorWithOpacity($w, 0.4),
+      colorWithOpacity($w, 0),
+      colorWithOpacity($s, 0.04)
+    );
+    border: 2px solid colorWithOpacity($s, 0.5);
+    padding: 2.5%;
+    min-width: 30%;
+    gap: 10px;
+    h3 {
+      color: $p;
+      text-transform: uppercase;
+      width: 100%;
+      text-align: center;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      width: 100%;
+      > :last-child {
+        text-align: right;
+      }
+    }
+  }
+  .box {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .markets {
+    .container {
+      flex-direction: column;
+      gap: 50px;
+    }
+    .box {
+      width: 100%;
+    }
+    .market {
+      width: 100%;
+    }
+  }
+}

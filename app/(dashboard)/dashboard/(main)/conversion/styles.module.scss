@@ -1,0 +1,89 @@
+.conversions {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+  align-items: flex-start;
+  h3 {
+    margin-bottom: 30px;
+    color: var(--p);
+  }
+  .grid {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    justify-content: space-between;
+    .convert {
+      width: 45%;
+      .review {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        input,
+        label {
+          width: 45%;
+        }
+      }
+    }
+    .table {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      gap: 20px;
+      overflow-x: auto;
+      .conversion {
+        display: flex;
+        width: max-content;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 15px;
+        p {
+          width: 100%;
+          overflow-wrap: break-word;
+        }
+        .icon {
+          font-size: 3rem;
+        }
+        .desc {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          align-items: flex-start;
+          width: 300px;
+          font-size: 0.8rem !important;
+          > :last-child {
+            color: var(--s);
+          }
+        }
+        .info {
+          .amount {
+            color: var(--p);
+            font-size: 1.3rem;
+            font-weight: 600;
+          }
+          span {
+            color: var(--s);
+          }
+        }
+        .actions {
+          display: flex;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .conversions {
+    .grid {
+      flex-direction: column;
+      gap: 50px;
+      .table,
+      .convert {
+        width: 100%;
+      }
+    }
+  }
+}

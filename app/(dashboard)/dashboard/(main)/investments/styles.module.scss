@@ -1,0 +1,142 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 50px;
+  width: 100%;
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    > * {
+      width: 100%;
+    }
+  }
+  .iRow {
+    display: flex;
+
+    align-items: center;
+    margin: 3px 0;
+    gap: 10px;
+    justify-content: space-between;
+    border: 1px solid var(--bg);
+    border-radius: 6px;
+    background-color: var(--white);
+    padding: 12px 6px;
+    > * {
+      flex: 1;
+    }
+  }
+  .container {
+    display: flex;
+    align-items: flex-start;
+
+    width: 100%;
+    gap: 50px;
+    > * {
+      flex: 1;
+    }
+  }
+  .box {
+    width: 50%;
+  }
+  .fRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  .table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    overflow-x: auto;
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: max-content;
+      gap: 10px;
+      > * {
+        width: 150px;
+      }
+
+      div {
+        display: flex;
+        gap: 10px;
+      }
+    }
+  }
+  .grid {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .plan {
+    width: 30%;
+    .banner {
+      position: relative;
+      height: 40vh;
+      width: 100%;
+      img {
+        object-fit: cover;
+      }
+    }
+    .under {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      width: 100%;
+      h2 {
+        color: var(--p);
+      }
+      div {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        justify-content: space-between;
+        > * {
+          flex: 1;
+        }
+      }
+      a {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main {
+    .container {
+      flex-direction: column;
+    }
+    .box {
+      width: 100%;
+    }
+    // .table {
+    //   .row {
+    //     > * {
+    //       width: 150px;
+    //     }
+    //   }
+    // }
+    .grid {
+      flex-direction: column;
+    }
+    .plan {
+      width: 100%;
+      .banner {
+        height: 30vh;
+      }
+    }
+  }
+}

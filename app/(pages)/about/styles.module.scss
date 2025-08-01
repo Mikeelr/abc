@@ -1,0 +1,54 @@
+@import "../../utilities.module";
+.about {
+  display: flex;
+  flex-direction: column;
+  padding: 10%;
+  padding-bottom: 0px;
+  font-size: 0.9rem;
+  gap: 50px;
+  section {
+    margin-bottom: 50px;
+    padding: 0 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-self: center;
+    text-align: center;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .center {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+    background: $g;
+    padding: 10%;
+    color: $w;
+    div {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .about {
+    section {
+      padding: 0 10%;
+    }
+
+    .grid {
+      flex-direction: column;
+      align-items: center;
+      div {
+        width: 80%;
+        padding: 10%;
+      }
+    }
+  }
+}

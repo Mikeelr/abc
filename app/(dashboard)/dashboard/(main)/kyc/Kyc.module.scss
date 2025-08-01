@@ -1,0 +1,55 @@
+.kyc {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  .verified,
+  .box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 25%;
+    gap: 50px;
+  }
+  .table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    overflow-x: auto;
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: max-content;
+      > * {
+        width: 200px;
+      }
+      div {
+        display: flex;
+        gap: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .kyc {
+    .box,
+    .verified {
+      padding: 0;
+    }
+    .table {
+      .row {
+        > * {
+          width: 150px;
+        }
+        > :last-child {
+          width: 200px;
+        }
+      }
+    }
+  }
+}

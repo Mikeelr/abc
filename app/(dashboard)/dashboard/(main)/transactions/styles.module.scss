@@ -1,0 +1,53 @@
+.transactions {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+  align-items: flex-start;
+  .table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    overflow-x: auto;
+    .transaction {
+      display: flex;
+      width: max-content;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 15px;
+      p {
+        width: 100%;
+        overflow-wrap: break-word;
+      }
+      .icon {
+        font-size: 3rem;
+      }
+      .desc {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        width: 300px;
+        font-size: 0.8rem !important;
+        > :last-child {
+          color: var(--s);
+        }
+      }
+      .info {
+        .amount {
+          color: var(--p);
+          font-size: 1.3rem;
+          font-weight: 600;
+        }
+        span {
+          color: var(--s);
+        }
+      }
+      .actions {
+        display: flex;
+        gap: 10px;
+      }
+    }
+  }
+}

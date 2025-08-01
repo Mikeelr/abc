@@ -1,0 +1,142 @@
+@import "../../../../../_utilities.module";
+.wallets {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 50px;
+  width: 100%;
+  .container {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+    justify-content: space-between;
+    > * {
+      flex: 1;
+    }
+  }
+  .table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    overflow-x: auto;
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: max-content;
+      gap: 10px;
+      > * {
+        width: 150px;
+      }
+      div {
+        display: flex;
+        gap: 10px;
+      }
+    }
+  }
+  .wallet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-radius: 12px;
+    background: linear-gradient(
+      to right,
+      colorWithOpacity($w, 0.4),
+      colorWithOpacity($w, 0),
+      colorWithOpacity($s, 0.04)
+    );
+    border: 2px solid colorWithOpacity($s, 0.5);
+    width: 70%;
+    gap: 10px;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .left {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        object-fit: cover;
+      }
+    }
+    .center {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 50%;
+      .name {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: $p;
+      }
+      .price {
+        color: $s;
+        font-weight: 600;
+      }
+    }
+    .right {
+      text-align: right;
+      flex-direction: column;
+      align-items: flex-end;
+      width: 30%;
+      .amount {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: $p;
+      }
+      .sm {
+        color: $s;
+        font-weight: 600;
+      }
+      span {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .box {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .wallets {
+    .container {
+      flex-direction: column;
+      gap: 50px;
+    }
+    .box {
+      width: 100%;
+    }
+    .wallet {
+      width: 100%;
+
+      .center {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 45%;
+        .name {
+          font-size: 1rem;
+          font-weight: 600;
+        }
+      }
+      .right {
+        width: 35%;
+        .amount {
+          font-size: 1rem;
+          font-weight: 800;
+          color: $p;
+        }
+
+        span {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}

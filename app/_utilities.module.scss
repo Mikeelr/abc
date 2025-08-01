@@ -1,0 +1,135 @@
+@mixin keyframes($action) {
+  @keyframes #{$action} {
+    @content;
+  }
+}
+$p: #005792;
+$g: #303841;
+$w: #f9f9f9;
+$s: #00a88f;
+$d: #a80000;
+$t: #a8a8a8;
+$bg: #f9f9f9;
+$b: #000000;
+
+@function colorWithOpacity($color, $opacity) {
+  $rgbaColor: rgba($color, $opacity);
+  @return $rgbaColor;
+}
+@function colorWithBrightness($color, $brightness) {
+  $adjustedColor: if(
+    $brightness > 0,
+    lighten($color, $brightness),
+    darken($color, abs($brightness))
+  );
+  @return $adjustedColor;
+}
+
+$gb: colorWithBrightness($s, 20);
+$pd: colorWithBrightness($p, -18);
+
+@mixin animate($name, $duration, $method, $delay, $loop) {
+  animation: $name $duration $method $loop;
+}
+
+@include keyframes(rubaShow) {
+  0% {
+    clip-path: circle(19.1% at 51% 46%);
+  }
+  10% {
+    clip-path: circle(23.3% at 59% 59%);
+  }
+  20% {
+    clip-path: circle(24.8% at 36% 63%);
+  }
+  30% {
+    clip-path: circle(29.6% at 32% 36%);
+  }
+  40% {
+    clip-path: circle(40.5% at 54% 43%);
+  }
+  50% {
+    clip-path: circle(50% at 50% 50%);
+  }
+  70% {
+    clip-path: circle(71.5% at 50% 51%);
+  }
+  100% {
+    clip-path: circle(28.6% at 50% 51%);
+  }
+}
+@include keyframes(topEnter) {
+  0% {
+    fill: rgba(255, 255, 255, 0.153);
+    transform: translateY(-100%);
+  }
+  10% {
+    fill: var(--s);
+    transform: translateY(0%);
+  }
+  100% {
+    fill: var(--s);
+    transform: translateY(0%);
+  }
+}
+@include keyframes(opacityenter) {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@include keyframes(leftEnter) {
+  0% {
+    fill: rgba(255, 255, 255, 0);
+    transform: translateY(-50%);
+  }
+  10% {
+    fill: var(--s);
+    transform: translateY(0%);
+  }
+  100% {
+    fill: var(--s);
+    transform: translate(0 0);
+  }
+}
+@include keyframes(rightEnter) {
+  0% {
+    fill: rgba(255, 255, 255, 0.053);
+    transform: translateY(100%);
+  }
+  10% {
+    fill: var(--s);
+    transform: translateY(0%);
+  }
+  100% {
+    fill: var(--s);
+    transform: translateY(0%);
+  }
+}
+@include keyframes(move) {
+  0% {
+    transform: translateX(-100%);
+  }
+  10% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@include keyframes(reveal) {
+  0% {
+    width: 100%;
+    opacity: 1;
+  }
+  10% {
+    width: 0px;
+    opacity: 0;
+  }
+  100% {
+    width: 0px;
+  }
+}

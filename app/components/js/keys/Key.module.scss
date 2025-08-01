@@ -1,0 +1,109 @@
+.keys {
+  flex-direction: column;
+  width: 100%;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: var(--s);
+  padding: 10%;
+  background: linear-gradient(to left, var(--p), var(--pd) 60%);
+  gap: 40px;
+
+  h1 {
+    text-align: center;
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .row {
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+    .currency {
+      background-color: var(--ps);
+      padding: 2.5%;
+      border-radius: 12px;
+      gap: 10px;
+      width: 45%;
+      flex-direction: column;
+      h1 {
+        font-size: 4rem;
+        margin: 0;
+      }
+      .images {
+        height: 30vh;
+        overflow: hidden;
+        width: 100%;
+        flex-direction: column;
+        position: relative;
+        perspective: 700px;
+        transform-style: preserve-3d;
+
+        .img {
+          position: relative;
+          flex-direction: column;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          transition: 0.5s;
+          p {
+            position: absolute;
+            z-index: 7;
+            bottom: 0;
+            background-color: var(--p);
+            padding: 6px;
+            margin: 0;
+          }
+          img {
+            object-fit: contain;
+          }
+        }
+        > :last-child {
+          transform: translateY(-150%);
+        }
+        &:hover {
+          .img {
+            transform: translateY(-150%);
+          }
+          > :last-child {
+            transform: translateY(-0px);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .keys {
+    h1 {
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .row {
+      flex-direction: column;
+      .currency {
+        padding: 5%;
+        width: 100%;
+        .images {
+          height: 38vh;
+          .img {
+            position: relative;
+          }
+          > :last-child {
+            transform: rotateX(0deg);
+          }
+          &:hover {
+            .img {
+              transform: rotateX(0deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}

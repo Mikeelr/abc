@@ -1,0 +1,195 @@
+@import "../utilities.module";
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  position: relative;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .top {
+    height: 90px;
+    justify-content: space-between;
+    width: 100%;
+    background-color: colorWithOpacity($w, 0.7);
+    box-shadow: 0 8px 16px colorWithOpacity($p, 0.03);
+    padding: 0 10%;
+
+    .left {
+      position: relative;
+      width: 50%;
+
+      justify-content: flex-start;
+      .img {
+        height: 80px;
+        width: 80px;
+        position: relative;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+    .right {
+      width: 50%;
+      gap: 20px;
+      color: $p;
+    }
+  }
+  .container {
+    width: 100%;
+
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    .left {
+      position: relative;
+      height: calc(100vh - 90px);
+      width: 50%;
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+  .body {
+    width: 50%;
+    background-color: colorWithOpacity($w, 0.4);
+    padding: 5%;
+    box-shadow: 0 8px 8px colorWithOpacity($p, 0.05);
+    border-radius: 3px;
+    min-height: calc(100vh - 90px);
+    > div {
+      width: 100%;
+      align-items: flex-start;
+      gap: 20px;
+      flex-direction: column;
+      h1 {
+        font-size: 3rem;
+        font-weight: 900;
+        color: $p;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        input {
+          padding: 3px 6px;
+          height: 50px;
+          outline: none;
+          transition: 0.75s;
+          background-color: transparent;
+          border: 1px solid $b;
+
+          &:hover {
+            border-bottom: 2px solid $b;
+          }
+        }
+        select {
+          padding: 3px 6px;
+          height: 50px;
+          border: 1px solid $b;
+          background-color: transparent;
+        }
+        div {
+          height: 50px;
+          width: 100%;
+          justify-content: space-between;
+          padding: 3px 6px;
+          border: 1px solid $b;
+
+          &:hover {
+            border-bottom: 2px solid $b;
+          }
+          > :first-child {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+          }
+          input[type="text"],
+          input[type="password"] {
+            width: 90%;
+            border: none;
+
+            &:hover {
+              border: none;
+            }
+          }
+        }
+        button {
+          color: $w;
+          border: 2px solid var(--p);
+          margin-top: 20px;
+          height: 50px;
+
+          transition: 0.75s;
+          &:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+          }
+        }
+      }
+      > :last-child {
+        justify-content: space-between;
+        margin-top: 40px;
+        gap: 20px;
+        color: $s;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main {
+    .top {
+      .left {
+        position: relative;
+        width: 30%;
+
+        justify-content: flex-start;
+        .img {
+          height: 80px;
+          width: 80px;
+          position: relative;
+        }
+      }
+      .right {
+        width: 70%;
+        font-size: 0.9rem;
+      }
+    }
+    .container {
+      width: 100%;
+      padding: 10% 10% 0px;
+      flex-direction: column-reverse;
+      min-height: calc(100vh - 90px);
+      justify-content: flex-start;
+      gap: 50px;
+      .left {
+        position: relative;
+        height: 30vh;
+        width: 100%;
+        img {
+          object-fit: cover;
+        }
+      }
+    }
+    .body {
+      width: 100%;
+      background-color: colorWithOpacity($w, 0.5);
+      border-radius: 0;
+      min-height: unset;
+      > div {
+        h1 {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}

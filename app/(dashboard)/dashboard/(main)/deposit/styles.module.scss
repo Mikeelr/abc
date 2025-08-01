@@ -1,0 +1,25 @@
+.deposit {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  form {
+    width: 50%;
+    .column {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .deposit {
+    form {
+      width: 100%;
+      p {
+        width: 100%;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+}
