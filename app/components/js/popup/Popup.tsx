@@ -1,8 +1,6 @@
 import styles from "./Popup.module.scss";
 
-const Popup: React.FC<{ action: (accept: boolean) => void }> = ({
-  action,
-}): JSX.Element => {
+const Popup: React.FC<{ action: (accept: boolean) => void }> = ({ action }) => {
   return (
     <div className={styles.popup}>
       <p>

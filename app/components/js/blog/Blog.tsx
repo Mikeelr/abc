@@ -11,7 +11,7 @@ interface PageProps {
 interface PageProp {
   post: BlogResponseType;
 }
-const BlogPosts: React.FC<PageProps> = ({ posts }): JSX.Element => {
+const BlogPosts: React.FC<PageProps> = ({ posts }) => {
   return (
     <div className={styles.blog}>
       <div className={styles.top}>
@@ -26,7 +26,7 @@ const BlogPosts: React.FC<PageProps> = ({ posts }): JSX.Element => {
     </div>
   );
 };
-export const BlogPost: React.FC<PageProp> = ({ post }): JSX.Element => {
+export const BlogPost: React.FC<PageProp> = ({ post }) => {
   const abstract = post.abstract.slice(0, 200);
   const date = new Date(post.createdAt);
   return (

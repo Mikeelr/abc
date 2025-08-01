@@ -1,5 +1,12 @@
 "use client";
-import React, { createContext, useEffect, useState, useContext } from "react";
+import React, {
+  createContext,
+  useEffect,
+  useState,
+  useContext,
+  Dispatch,
+  Suspense,
+} from "react";
 import Script from "next/script";
 import { UserResponseType } from "./dataTypes";
 
@@ -21,11 +28,22 @@ export interface UserContextType {
 export const UserContext = createContext<UserContextType | null>(null);
 export const useUserContext = () => useContext(UserContext) as UserContextType;
 
+function SetRef({
+  setRUsername,
+}: {
+  setRUsername: Dispatch<React.SetStateAction<string>>;
+}) {
+  const query = useSearchParams();
+  const ref = query.get("referralID");
+  useEffect(() => {
+    setRUsername(() => ref || "");
+  }, [ref]);
+  return <></>;
+}
+
 export default function Wrap({ children }: Props) {
   const [user, setUser] = useState<UserResponseType | null>(null);
   const [rUsername, setRUsername] = useState<string>("");
-  const query = useSearchParams();
-  const ref = query.get("referralID");
 
   const router = useRouter();
   const logout = () => {
@@ -83,12 +101,11 @@ export default function Wrap({ children }: Props) {
     getUser();
   }, [user?.token]);
 
-  useEffect(() => {
-    setRUsername(() => ref || "");
-  }, [ref]);
-
   return (
     <div>
+      <Suspense>
+        <SetRef setRUsername={setRUsername} />
+      </Suspense>
       <UserContext.Provider
         value={{
           logIn,
